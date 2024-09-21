@@ -3,5 +3,13 @@
     "es2015",
     "react",
     "survivejs-kanban"
-  ]
+  ],
+  "env": {
+//    "start": { // Why BABEL_ENV does not see 'start' ?
+    "development": {
+      "presets": [
+        "react-hmre"
+      ]
+    }
+  }
 }
