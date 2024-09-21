@@ -32,7 +32,15 @@ body {
   display: inline-block;
 }
 
+.note div { /* is a container for 'x' button */
+  position: relative;
+}
+
 .note .delete-note {
+  position: absolute; /* 'x' button inside a div */
+  top: -5px;          /* putting close button top-right */
+  right: -5px;        /* even for lengthy notes */
+
   float: right;
   padding: 0;
   background-color: #fdfdfd;
