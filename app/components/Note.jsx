@@ -1,3 +1,4 @@
 import React from 'react';
+import Data from './data.jsx';
 
-export default () => <div>Usefule Note: Learn React with Survive.js!</div>;
+export default () => <div> <ul> { Data.map( task => <li> {task.task} </li>)}</ul></div>;
