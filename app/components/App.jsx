@@ -51,13 +51,29 @@ export default class App extends React.Component {
     }, () => { console.log('the state was updated!'); });
   };
 
+  editNote = (id, task) => {
+    // Don't modify if trying to set an empty value
+    if (!task.trim()) {
+      return;
+    }
+
+    const notes = this.state.notes.map( note => {
+      if (note.id === id && task) {
+        note.task = task;
+      }
+      return note;
+    });
+
+    this.setState({notes});
+  }
+
   render() {
     const notes = this.state.notes;
 
     return (
       <div>
         <button onClick={this.addNote}>+</button>
-        <Notes notes={notes} />
+        <Notes notes={notes} onEdit={this.editNote} />
       </div>
     );
   }
