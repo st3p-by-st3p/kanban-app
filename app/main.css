@@ -27,7 +27,7 @@ body {
   transition: 0.6s;
 }
 
-.note .task {
+.note .value {
   /* force to use inline-block so that it get minimum height */
   display: inline-block;
 }
@@ -36,7 +36,7 @@ body {
   position: relative;
 }
 
-.note .delete-note {
+.note .delete {
   position: absolute; /* 'x' button inside a div */
   top: -5px;          /* putting close button top-right */
   right: -5px;        /* even for lengthy notes */
@@ -49,6 +49,6 @@ body {
   visibility: hidden;
 }
 
-.note:hover .delete-note {
+.note:hover .delete {
   visibility: visible;
 }
