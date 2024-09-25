@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "stats": "webpack --stats=verbose --json > stats.json"
   },
   "keywords": [],
   "author": "",
