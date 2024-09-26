@@ -29,7 +29,7 @@ const common = {
   output: {
     path: PATHS.build,
     // Output using entry name
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
@@ -95,10 +95,15 @@ if (TARGET === 'start' || !TARGET) {
 if (TARGET === 'build' || TARGET === 'stats') {
   module.exports = merge(common, {
     // Define vendor entry point needed for splitting
-    entry: {
-      vendor: Object.keys(pkg.dependencies).filter(function(v) {
-        return v !== 'alt-utils';
-      })
+    // entry: {
+    //   vendor: Object.keys(pkg.dependencies).filter(function(v) {
+    //     return v !== 'alt-utils';
+    //   })
+    // },
+    output: {
+      path: PATHS.build,
+      // Output using entry name
+      filename: '[name].[chunkhash].js'
     },
     optimization: {
       splitChunks: { chunks: "all" }
